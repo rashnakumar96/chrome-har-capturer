@@ -117,6 +117,7 @@ function generatePostHook(userMetric) {
 }
 
 const {host, port, width, height, content, cache, maxage, timeout, retry, retryDelay, abortOnFailure, postData, parallel, userMetric} = program;
+console.log('cli cache:', cache, 'cli maxage:', maxage);
 CHC.run(program.args, {
     host, port,
     width, height,

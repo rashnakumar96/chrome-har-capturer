@@ -18,7 +18,7 @@ async function test() {
 
   await client.send("Fetch.enable", {
     patterns: [{
-        urlPattern: '*', 
+        urlPattern: '*',
         requestStage: "Response" }]
   });
 
@@ -41,7 +41,7 @@ async function test() {
             elements.value="public, max-age=0"
         }
     }
-    
+
     await client.send("Fetch.continueResponse", { requestId, responseCode: 200, responseHeaders});
     console.log(reqEvent.responseHeaders);
   });
@@ -59,10 +59,10 @@ async function test() {
   c.on('error', function () {
       console.error('Cannot connect to Chrome');
   });
-  
+
   // await har.stop();
-  
-  
+
+
   await browser.close();
   // return;
 }
