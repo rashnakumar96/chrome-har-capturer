@@ -20,6 +20,7 @@ program
     .option('-o, --output <file>', 'write to file instead of stdout')
     .option('-c, --content', 'also capture the requests body')
     .option('-k, --cache', 'allow caching')
+    .option('-m, --maxage <maxage>', 'sets maxage')
     .option('-a, --agent <agent>', 'user agent override')
     .option('-b, --block <URL>', 'URL pattern (*) to block (can be repeated)', append, [])
     .option('-H, --header <header>', 'Additional headers (can be repeated)', append, [])
@@ -115,12 +116,13 @@ function generatePostHook(userMetric) {
     };
 }
 
-const {host, port, width, height, content, cache, timeout, retry, retryDelay, abortOnFailure, postData, parallel, userMetric} = program;
+const {host, port, width, height, content, cache, maxage, timeout, retry, retryDelay, abortOnFailure, postData, parallel, userMetric} = program;
 CHC.run(program.args, {
     host, port,
     width, height,
     content,
     cache,
+    maxage,
     timeout,
     retry, retryDelay,
     abortOnFailure,

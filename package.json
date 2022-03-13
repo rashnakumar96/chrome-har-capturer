@@ -33,6 +33,7 @@
     },
     "dependencies": {
         "chalk": "1.x.x",
+        "chrome-har-capturer": "^0.13.10",
         "chrome-remote-interface": "^0.31.2",
         "commander": "2.x.x"
     },
